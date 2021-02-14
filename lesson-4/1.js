@@ -1,0 +1,26 @@
+var num1 = prompt('Введите число от 0 до 999:'),
+  numLen = num1.length //количество символов в числе
+obj = {}
+f(num1)
+
+function f(num) {
+  if (num < 0 || num > 999) {
+    console.log('Число ' + num + ' вне диапазона 0 - 999')
+  } else {
+    switch (numLen) {
+      case 3:
+        obj.units = num[2] //123
+        obj.tens = num[1]
+        obj.hundreds = num[0]
+        break
+      case 2: //12
+        obj.units = num[1]
+        obj.tens = num[0]
+        break
+      default:
+        obj.units = num
+    }
+    console.log(obj)
+  }
+  return obj
+}
